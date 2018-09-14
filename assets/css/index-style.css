@@ -1,0 +1,59 @@
+* {
+    box-sizing:border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-image: url(../images/matrix-356024_1920.jpg);
+    color: #1aff1a;
+    line-height: 1.5;
+}
+
+header{
+    font-family: 'Righteous', cursive;
+    font-size: 60px;
+    text-align: center;
+    background-color: #000;
+    padding: 30px;
+}
+
+section{
+    width: 70%;
+    margin:15px auto 20px auto;
+    padding: 15px;
+    background-color: #039;
+    border:2px solid red;
+    text-align:center;
+}
+
+.instructions, .cat-select{
+    width:90%;
+    margin:20px auto 10px auto;
+    padding: 10px;
+    background-color: #000;
+}
+
+.cat-select {
+    height: 150px;
+}
+
+.instructions h3 {
+    font-size: 24pt;
+    text-decoration: underline;
+}
+
+.button {
+    width: 220px;
+    height: 45px;
+    background: red;
+    padding: 10px 30px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.button:hover{
+    text-decoration: underline;
+}

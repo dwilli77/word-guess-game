@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HangMan</title>
+        <link rel="stylesheet" href="./assets/css/reset.css">
+        <link href="https://fonts.googleapis.com/css?family=Poppins|Righteous" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/index-style.css">
+    </head>
+    <body>
+        <header>
+            <h1>HangMan!</h1>
+        </header>
+        <section class="main-content">
+            <div class="inst-container">
+                <div class="instructions">
+                    <h3>INSTRUCTIONS</h3>
+                    <br>
+                    <p>this is a Hangman game</p>
+                    <p>simply type a letter to make a guess</p>
+                </div>
+                <div class="cat-select">
+                    <p>select your category to get started</p>
+                    <br>
+                    <div class="customer-select">
+                        <select id="drop-box">
+                            <option disabled selected value>-Select a Category</option>
+                            <option value="beach">Beach</option>
+                            <option value="americanHistory">American History</option>
+                            <option value="food">Food</option>
+                        </select>
+                    </div>
+                    <br>
+                    <a class="button" id="start-button" onclick="updateLink()" href="#">Start!</a>
+                    <br>
+                </div>
+            </div>
+        </section>
+        <script type="text/javascript">
+            let category= "";
+            function updateLink(){
+                category = document.getElementById("drop-box").value;
+                if(category === "beach"){
+                    document.getElementById("start-button").href="./beach.html";
+                }else if(category === "americanHistory"){
+                    document.getElementById("start-button").href="./history.html";
+                }else if(category === "food"){
+                    document.getElementById("start-button").href="./food.html";
+                }else{
+                    document.getElementById("start-button").href="#";
+                }
+            }
+        </script>
+    </body>
+</html>
