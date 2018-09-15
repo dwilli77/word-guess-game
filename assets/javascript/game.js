@@ -19,10 +19,10 @@ document.getElementById("user-progress").textContent = userProgress.join(" ");
 
 //sets number of lives to 7 
 let lives = 7;
-
+document.getElementById("lives-remaining").textContent = "Lives remaining: " + lives;
 //if letter guessed not found in solutionWord, then push to this array
 let incorrectGuesses = [];
-let displayIncorrectGuesses = incorrectGuesses.toString();
+let displayIncorrectGuesses = incorrectGuesses.join(" ,");
 document.getElementById("incorrect-guesses").textContent = displayIncorrectGuesses;
 
 document.onkeyup = function (event) {
@@ -43,8 +43,9 @@ document.onkeyup = function (event) {
        if(solutionWord.indexOf(userGuess) < 0){
             //if not --> add that letter the the incorrectGuesses array
             incorrectGuesses.push(userGuess);
+            document.getElementById("incorrect-guesses").textContent = incorrectGuesses.join(" ,");
             lives--;
-            console.log("lives remaining: " + lives);
+            document.getElementById("lives-remaining").textContent = "Lives remaining: " + lives;
         // if so --> replace the '-' in the userProgress array with the letter guessed
        }else{
            for(let i=0;i<solutionWord.length;i++){
