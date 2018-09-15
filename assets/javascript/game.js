@@ -25,6 +25,24 @@ let incorrectGuesses = [];
 let displayIncorrectGuesses = incorrectGuesses.join(" ,");
 document.getElementById("incorrect-guesses").textContent = displayIncorrectGuesses;
 
+
+//resets the game back to it's starting point
+function reset(){
+    correctAnswerCounter = 0;
+    solutionWord = wordChoices[Math.floor(Math.random() * wordChoices.length)];
+    userProgress = [];
+    for(i=0;i<solutionWord.length;i++){
+        userProgress[i] = "-";
+    };
+    lives = 7;
+    incorrectGuesses = [];
+    document.getElementById("user-progress").textContent = userProgress.join(" ");
+    document.getElementById("lives-remaining").textContent = "Lives remaining: " + lives;
+    document.getElementById("incorrect-guesses").textContent = displayIncorrectGuesses;
+}
+
+//start the game
+//================================================================================================
 document.onkeyup = function (event) {
     //doesn't do anything if user types anything other than a letter
    if(event.which < 65 || event.which > 90){
@@ -35,6 +53,10 @@ document.onkeyup = function (event) {
     //checks if you guess the same incorrect letter again
    }else if(incorrectGuesses.indexOf(event.key) >= 0){
        return false;
+   }else if(lives === 0){
+       return false;
+   }else if(correctAnswerCounter === solutionWord.length){
+       return false;
    }else{
        //saves input from user
        let userGuess = event.key;
@@ -43,7 +65,7 @@ document.onkeyup = function (event) {
        if(solutionWord.indexOf(userGuess) < 0){
             //if not --> add that letter the the incorrectGuesses array
             incorrectGuesses.push(userGuess);
-            document.getElementById("incorrect-guesses").textContent = incorrectGuesses.join(" ,");
+            document.getElementById("incorrect-guesses").textContent = incorrectGuesses.join(", ");
             lives--;
             document.getElementById("lives-remaining").textContent = "Lives remaining: " + lives;
         // if so --> replace the '-' in the userProgress array with the letter guessed
@@ -59,8 +81,15 @@ document.onkeyup = function (event) {
    };
    if(correctAnswerCounter === solutionWord.length){
        console.log("you win");
+       document.getElementById("reset").style = "";
    };
    if(lives === 0){
        console.log("you lose");
+       document.getElementById("reset").style = "";
    }
+}
+
+document.getElementById("reset").onclick = function(){
+    reset();
+    document.getElementById("reset").style = "display:none;";
 }
