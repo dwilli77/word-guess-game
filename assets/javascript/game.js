@@ -1,6 +1,6 @@
 
 //list of possible solutions
-const wordChoices = ["sand", "ocean", "corona", "swimming", "seashells", "mermaids", "sailboat", "sunshine"];
+// const wordChoices = ["sand", "ocean", "corona", "swimming", "seashells", "mermaid", "sailboat", "sunshine", "fish", "crab", "sandcastle", "bucket", "shovel", "dolphin", "bikini"];
 
 
 //initialize a correctAnswerCounter
@@ -15,6 +15,7 @@ let userProgress = [];
 for(i=0;i<solutionWord.length;i++){
     userProgress[i] = "-";
 }
+
 document.getElementById("user-progress").textContent = userProgress.join(" ");
 
 //sets number of lives to 7 
@@ -30,6 +31,7 @@ document.getElementById("incorrect-guesses").textContent = displayIncorrectGuess
 function reset(){
     correctAnswerCounter = 0;
     solutionWord = wordChoices[Math.floor(Math.random() * wordChoices.length)];
+    console.log(solutionWord);
     userProgress = [];
     for(i=0;i<solutionWord.length;i++){
         userProgress[i] = "-";
@@ -60,7 +62,6 @@ document.onkeyup = function (event) {
    }else{
        //saves input from user
        let userGuess = event.key;
-        console.log(userGuess)
         //check if the userGuess is in the solutionWord
        if(solutionWord.indexOf(userGuess) < 0){
             //if not --> add that letter the the incorrectGuesses array
@@ -80,16 +81,17 @@ document.onkeyup = function (event) {
        };
    };
    if(correctAnswerCounter === solutionWord.length){
-       console.log("you win");
+       document.getElementById("outcome-text").textContent = "YOU WIN!!";
        document.getElementById("reset").style = "";
    };
    if(lives === 0){
-       console.log("you lose");
-       document.getElementById("reset").style = "";
+    document.getElementById("outcome-text").textContent = "sorry, you lose. The correct answer was: " + solutionWord;
+    document.getElementById("reset").style = "";
    }
 }
 
 document.getElementById("reset").onclick = function(){
     reset();
     document.getElementById("reset").style = "display:none;";
+    document.getElementById("outcome-text").textContent = "";
 }

@@ -2,29 +2,36 @@
 <html>
     <head>
         <title>Beach HangMan!</title>
+        <link rel="stylesheet" href="./assets/css/reset.css">
+        <link rel="stylesheet" href="./assets/css/game-style.css">
     </head>
     <body>
-        <header>
+        <div id="beach">
+            <header>
 
-        </header>
-        <section>
-            <div>
-                image place holder
-            </div>
-            <div id="lives-remaining"></div>
-            <div id="play-area">
-                <div>Your Word</div>
-                <div id="user-progress"></div>
+            </header>
+            <section>
                 <div>
-                    Wrong Letters
-                    <div id="incorrect-guesses"></div>
+                    image place holder
                 </div>
-            </div>
-            <div>
-                <div id="outcome-text"></div>
-                <button id="reset" style="display:none;">click here to play again</button>
-            </div>
-        </section>
-        <script src="./assets/javascript/game.js"></script>
+                <div id="lives-remaining"></div>
+                <div id="play-area">
+                    <div>Your Word</div>
+                    <div id="user-progress"></div>
+                    <div>
+                        Wrong Letters
+                        <div id="incorrect-guesses"></div>
+                    </div>
+                </div>
+                <div>
+                    <p id="outcome-text"></p>
+                    <button id="reset" style="display:none;">click here to play again</button>
+                </div>
+            </section>
+            <script>
+                const wordChoices = ["sand", "ocean", "corona", "swimming", "seashells", "mermaid", "sailboat", "sunshine", "fish", "crab", "sandcastle", "bucket", "shovel", "dolphin", "bikini"];
+            </script>
+            <script src="./assets/javascript/game.js"></script>
+        </div>
     </body>
 </html>

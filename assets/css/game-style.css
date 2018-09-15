@@ -1,0 +1,30 @@
+/* different background images based on category */
+body, html{
+    height:100%;
+    margin:0;
+}
+
+#history{
+    background-image: url(../images/declaration.jpg);
+    height:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#food{
+    background-image: url(../images/food.jpg);
+    height:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#beach{
+    background-image: url(../images/beach.jpg);
+    height:100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+

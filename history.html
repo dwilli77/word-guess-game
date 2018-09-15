@@ -2,8 +2,34 @@
 <html>
     <head>
         <title>History HangMan!</title>
+        <link rel="stylesheet" href="./assets/css/reset.css">
+        <link rel="stylesheet" href="./assets/css/game-style.css">
     </head>
-    <body>
-        
+    <body id="history">
+        <header>
+
+        </header>
+        <section>
+            <div>
+                image place holder
+            </div>
+            <div id="lives-remaining"></div>
+            <div id="play-area">
+                <div>Your Word</div>
+                <div id="user-progress"></div>
+                <div>
+                    Wrong Letters
+                    <div id="incorrect-guesses"></div>
+                </div>
+            </div>
+            <div>
+                <p id="outcome-text"></p>
+                <button id="reset" style="display:none;">click here to play again</button>
+            </div>
+        </section>
+        <script>
+            const wordChoices = ["washington", "saratoga", "franklin", "colonies", "constitution", "independence", "revolution", "trenton", "musket", "congress", "america"];
+        </script>
+        <script src="./assets/javascript/game.js"></script>
     </body>
 </html>
