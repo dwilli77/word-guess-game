@@ -85,7 +85,7 @@ document.onkeyup = function (event) {
        document.getElementById("reset").style = "";
    };
    if(lives === 0){
-    document.getElementById("outcome-text").textContent = "sorry, you lose. The correct answer was: " + solutionWord;
+    document.getElementById("outcome-text").textContent = "correct answer: " + solutionWord;
     document.getElementById("reset").style = "";
    }
 }

@@ -3,25 +3,24 @@
     <head>
         <title>Beach HangMan!</title>
         <link rel="stylesheet" href="./assets/css/reset.css">
+        <link href="https://fonts.googleapis.com/css?family=Poppins|Righteous" rel="stylesheet">
         <link rel="stylesheet" href="./assets/css/game-style.css">
     </head>
     <body>
         <div id="beach">
             <header>
-
+                <h1>Beach HangMan</h1>
             </header>
             <section>
-                <div>
-                    image place holder
-                </div>
+                <img id="hangman-picture" src="https://via.placeholder.com/450x300">
                 <div id="lives-remaining"></div>
                 <div id="play-area">
-                    <div>Your Word</div>
+                    <div class="your-word">Your Word</div>
                     <div id="user-progress"></div>
-                    <div>
+                    <div class="wrong-letters">
                         Wrong Letters
-                        <div id="incorrect-guesses"></div>
                     </div>
+                    <div id="incorrect-guesses"></div>
                 </div>
                 <div>
                     <p id="outcome-text"></p>
