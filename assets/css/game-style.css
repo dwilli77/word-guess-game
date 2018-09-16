@@ -40,7 +40,20 @@ header{
     text-align: center;
     color: #fff;
     font-size: 60pt;
-    height:90px;
+    padding:20px;
+}
+
+header .return-button{
+    position:absolute;
+    right:5px;
+    top:5px;
+    font-size: 12pt;
+    text-decoration: none;
+    background-color: #f00;
+    color:#fff;
+    padding: 15px;
+    font-weight: 500;
+    border-radius: 5px;
 }
 
 section{
