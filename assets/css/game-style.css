@@ -46,20 +46,22 @@ header{
 section{
     background-color: #fff;
     width: 80%;
-    height: 600px;
+    height: 575px;
     margin:10px auto;
     border: 2px solid #ccc;
     text-align:center;
-    opacity: 0.75;
+    opacity: 0.9;
     padding: 20px;
 }
 
 section img{
+    height:300px;
+    width:450px;
     opacity: 1.0;
 }
 
 #play-area{
-    padding:30px;
+    padding:15px;
     font-size: 24pt;
 }
 
@@ -69,8 +71,30 @@ section img{
 
 #user-progress{
     color:#3b53db;
+    padding:5px;
 }
 
 #incorrect-guesses{
     color:#ff3239;
+    padding:5px;
+}
+
+#outcome-text{
+    font-size:20pt;
+    position: fixed;
+    left:35%;
+    top: 135px;
+}
+
+button{
+    background-color: #f00;
+    color:#fff;
+    height:40px;
+    border-radius: 5px;
+    font-size:14pt;
+}
+
+button:hover{
+    text-decoration: underline;
+    cursor: pointer;
 }

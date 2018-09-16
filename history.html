@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>History HangMan!</title>
+        <title>Presidents Hangman!</title>
         <link rel="stylesheet" href="./assets/css/reset.css">
         <link href="https://fonts.googleapis.com/css?family=Poppins|Righteous" rel="stylesheet">
         <link rel="stylesheet" href="./assets/css/game-style.css">
     </head>
     <body id="history">
         <header>
-
+            <h1>Presidents Hangman</h1>
         </header>
         <section>
-            <div>
-                image place holder
-            </div>
+            <img id="hangman-picture" src="./assets/images/hangman0.jpg">
             <div id="lives-remaining"></div>
             <div id="play-area">
-                <div>Your Word</div>
+                <div class="your-word">Your Word</div>
                 <div id="user-progress"></div>
-                <div>
+                <div class="wrong-letters">
                     Wrong Letters
-                    <div id="incorrect-guesses"></div>
                 </div>
+                <div id="incorrect-guesses"></div>
             </div>
             <div>
                 <p id="outcome-text"></p>
@@ -29,7 +27,7 @@
             </div>
         </section>
         <script>
-            const wordChoices = ["washington", "saratoga", "franklin", "colonies", "constitution", "independence", "revolution", "trenton", "musket", "congress", "america"];
+            const wordChoices = ["washington", "adams", "jefferson", "madison", "monroe", "jackson", "harrison", "tyler", "polk", "taylor", "fillmore", "pierce", "buchanan", "lincoln", "johnson", "grant", "hayes", "garfield", "arthur", "cleveland", "mckinley", "roosevelt", "taft", "wilson", "harding", "coolidge", "hoover", "truman", "eisenhower", "kennedy", "nixon", "ford", "carter", "reagan", "bush", "clinton", "obama", "trump"];
         </script>
         <script src="./assets/javascript/game.js"></script>
     </body>

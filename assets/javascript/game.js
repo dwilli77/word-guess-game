@@ -38,6 +38,7 @@ function reset(){
     };
     lives = 7;
     incorrectGuesses = [];
+    document.getElementById("hangman-picture").src="./assets/images/hangman0.jpg";
     document.getElementById("user-progress").textContent = userProgress.join(" ");
     document.getElementById("lives-remaining").textContent = "Lives remaining: " + lives;
     document.getElementById("incorrect-guesses").textContent = displayIncorrectGuesses;
@@ -80,14 +81,36 @@ document.onkeyup = function (event) {
            };
        };
    };
-   if(correctAnswerCounter === solutionWord.length){
-       document.getElementById("outcome-text").textContent = "YOU WIN!!";
-       document.getElementById("reset").style = "";
+   //updates the hangman picture based on how many lives are remaining
+   switch(lives){
+        case 6:
+            document.getElementById("hangman-picture").src="./assets/images/hangman1.jpg";
+            break;
+        case 5:
+            document.getElementById("hangman-picture").src="./assets/images/hangman2.jpg";
+            break;
+        case 4:
+            document.getElementById("hangman-picture").src="./assets/images/hangman3.jpg";
+            break;
+        case 3:
+            document.getElementById("hangman-picture").src="./assets/images/hangman4.jpg";
+            break;
+        case 2:
+            document.getElementById("hangman-picture").src="./assets/images/hangman5.jpg";
+            break;
+        case 1:
+            document.getElementById("hangman-picture").src="./assets/images/hangman6.jpg";
+            break;
+        case 0:
+            document.getElementById("outcome-text").textContent = "correct answer: " + solutionWord;
+            document.getElementById("hangman-picture").src="./assets/images/hangman-lose.jpg";
+            document.getElementById("reset").style = "";
+            break;
    };
-   if(lives === 0){
-    document.getElementById("outcome-text").textContent = "correct answer: " + solutionWord;
+   if(correctAnswerCounter === solutionWord.length){
+    document.getElementById("hangman-picture").src="./assets/images/hangman-win.jpg";
     document.getElementById("reset").style = "";
-   }
+};
 }
 
 document.getElementById("reset").onclick = function(){
