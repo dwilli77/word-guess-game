@@ -11,3 +11,5 @@ Use the keyboard to guess a letter.
 ***
 
 This is implemented using only Vanilla Javascript
+
+![screenshot](./screenshot.PNG "Hangman")
